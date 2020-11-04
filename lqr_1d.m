@@ -1,16 +1,23 @@
 A = zeros(2);
 B = zeros(2,1);
-N = 0;
-Q = eye(2);
-p = 500;
-R = p*eye(1);
 
 A(1,2) = 1;
 B(2) = 1;
 
+%According to
+%http://www.cds.caltech.edu/~murray/courses/cds110/wi06/lqr.pdf, we can use
+%the identity matrix for the state cost and just vary the p parameter that
+%multiplies the input cost
+
+Q = eye(2); %State cost
+p = 500; %This parameter should be varied until we get a good response
+R = p*eye(1); %Input cost
+
+N = 0;
+
 K = lqr(A,B,Q,R,N);
 
-H = 100;
+H = 100; %Time horizon
 
 x = zeros(H,2);
 
