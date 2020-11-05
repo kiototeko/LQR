@@ -39,6 +39,6 @@ ylabel('Velocity')
 xlabel('Time horizon')
 
 figure
-plot(1:H, u)
+plot(1:(H-1), u)
 xlabel('Time horizon')
 ylabel('Acceleration')
