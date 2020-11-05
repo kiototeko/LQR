@@ -21,7 +21,7 @@ H = 100; %Time horizon
 
 x = zeros(H,2);
 
-x(1,:) = [2,2];
+x(1,:) = [2,2]; %starting position and velocity
 
 for t=1:H-1
    u(t) = -K*x(t,:).';
